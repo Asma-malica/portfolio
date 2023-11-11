@@ -1,5 +1,3 @@
-// Project.js
-
 import React from 'react';
 import './project.css';
 
@@ -7,17 +5,17 @@ const projects = [
   {
     title: 'Random Password Generator',
     description: 'Developed using Python and Java FX. This project generates random passwords for enhanced security.',
-    githubLink: 'https://github.com/your-username/random-password-generator',
+    githubLink: 'https://github.com/Asma-malica/Password-Generator-using-JavaFX',
   },
   {
     title: 'Bankers Algorithm',
     description: 'Implemented in Python, HTML, and CSS. A simulation of the Banker\'s algorithm for resource allocation in an operating system.',
-    githubLink: 'https://github.com/your-username/bankers-algorithm',
+    githubLink: 'https://github.com/Asma-malica/Bankers-Algorithm',
   },
   {
     title: 'Restaurant Menu Page',
     description: 'Designed using Figma. This project involves creating an intuitive user interface for a restaurant menu page.',
-    githubLink: 'https://github.com/your-username/restaurant-menu-page',
+    githubLink: 'https://github.com/Asma-malica/CodSoft/blob/main/Restaurant_Menu%20(2).png',
   },
 ];
 
