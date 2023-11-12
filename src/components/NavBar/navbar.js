@@ -10,6 +10,7 @@ const Navbar = () => {
         <div className = "desktopMenu">
             <Link className = "desktopMenuListItem">Home</Link>
             <Link className = "desktopMenuListItem">About</Link>
+            <Link className = "desktopMenuListItem">Education</Link>
             <Link className = "desktopMenuListItem">Projects</Link>
             <Link className = "desktopMenuListItem">Skills</Link>
             
