@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './intro.css';
-import bg from '../../assets/image.png';
+import bg from '../../assets/asma.png';
 import btnImg from '../../assets/hireme.png';
 import { Link } from 'react-scroll';
 
