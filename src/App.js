@@ -4,9 +4,10 @@ import About from "./components/About/about" ;
 import Education from "./components/Education/education" ;
 
 import Project from "./components/Project/project" ;
-import Contact from "./components/Contact/contact";
+// import Contact from "./components/Contact/contact";
 
 import Footer from "./components/Footer/footer" ;
+import Skills from "./components/Skills/skills" ;
 
 
 function App() {
@@ -16,8 +17,10 @@ function App() {
       <Intro />
       <About/>
       <Education/>
+      <Skills/>
       <Project/>
-      <Contact/>
+      
+      
       <Footer/>
     </div>
   );

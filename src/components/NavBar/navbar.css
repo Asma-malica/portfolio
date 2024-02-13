@@ -27,9 +27,9 @@
 }
 
 .desktopMenuListItem:hover{
-    color : #00eeff ;
+    color :  #00bfff ;
     padding-bottom : 0.5rem ;
-    border-bottom : 3px solid #0ef;
+    border-bottom : 3px solid #0bf;
 
 
 }

@@ -6,7 +6,7 @@ import './education.css';
 const Education = () => {
   return (
     <div className="education-container">
-      <h2>Education</h2>
+      <h2>EDUCATION</h2>
       <div className="education-item">
         <div className="education-year">2016-2018</div>
         <div className="education-details">
