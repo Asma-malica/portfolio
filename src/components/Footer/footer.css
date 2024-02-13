@@ -1,0 +1,42 @@
+/* Footer.css */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .rights {
+    margin: 10px 0;
+    font-size: 1em;
+  }
+  
+  .center-content {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .quote {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-style: italic;
+  }
+  
+  .additional-info {
+    margin: 10px 0;
+    font-size: 1em;
+  }
+  
+  .right-content {
+    text-align: right;
+  }
+  
+  /* Add styles for your social media links or icons */
+  

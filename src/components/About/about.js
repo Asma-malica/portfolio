@@ -10,6 +10,8 @@ const About = () => {
                 <img src="asma.png" alt="Asma Malica J" />
             </div>
             <div className="content-container">
+                <h1>About Me</h1>
+
                 <h1>Asma Malica J</h1>
                 <p>Software Developer and UI/UX Designer</p>
                 <p>
