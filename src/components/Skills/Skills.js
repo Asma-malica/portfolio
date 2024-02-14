@@ -3,7 +3,7 @@
 import React from "react";
 import "./skills.css";
 
-const Skills = () => {
+const skills = () => {
   return (
     <div className="skills-container">
       <h1 className="main-heading">SKILLS</h1>
@@ -57,4 +57,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default skills;
