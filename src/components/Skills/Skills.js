@@ -1,5 +1,3 @@
-// Skills.js
-
 import React from "react";
 import "./skills.css";
 
@@ -18,7 +16,7 @@ const Skills = () => {
       </div>
 
       <div className="skill-category">
-        <h2 className="category-title">Data Science</h2>
+        <h2 className="category-title">Machine Learning</h2>
         <ul className="skills-list">
           <li>Numpy</li>
           <li>Pandas</li>
@@ -30,8 +28,8 @@ const Skills = () => {
         <h2 className="category-title">Web Development</h2>
         <ul className="skills-list">
           <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript (ES6+)</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
           <li>React JS</li>
         </ul>
       </div>

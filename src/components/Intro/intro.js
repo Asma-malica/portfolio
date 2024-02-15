@@ -1,21 +1,32 @@
-// Intro.js
 
 import React, { useState, useEffect } from 'react';
 import './intro.css';
 import bg from '../../assets/asma.png';
 import btnImg from '../../assets/hireme.png';
-import { Link } from 'react-scroll';
 
 const Intro = () => {
-    const [showSoftwareDeveloper, setShowSoftwareDeveloper] = useState(true);
+    const [showRoles, setShowRoles] = useState(0); // 0 for Software Developer, 1 for UI/UX Designer, 2 for ML Explorer
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setShowSoftwareDeveloper((prev) => !prev);
-        }, 1000); // Toggle every 10 seconds
+            setShowRoles((prev) => (prev + 1) % 3); // Toggle between 0, 1, and 2
+        }, 10000); // Toggle every 10 seconds
 
         return () => clearInterval(interval);
     }, []);
+
+    const getRoleText = () => {
+        switch (showRoles) {
+            case 0:
+                return 'Software Developer';
+            case 1:
+                return 'UI/UX Designer';
+            case 2:
+                return 'ML Explorer';
+            default:
+                return 'Software Developer';
+        }
+    };
 
     return (
         <section id="intro">
@@ -23,12 +34,16 @@ const Intro = () => {
                 <span className='hello'>Hello,</span>
                 <span className='introText'>
                     I'm <span className="introName">Asma Malica</span><br />
-                    <span className={`marquee${showSoftwareDeveloper ? 'softwareDeveloper' : 'uxDesigner'}`}>
-                        {showSoftwareDeveloper ? 'Software Developer' : 'UI/UX Designer'}
+                    <span className={`marquee ${showRoles === 0 ? 'softwareDeveloper' : showRoles === 1 ? 'uxDesigner' : 'mlExplorer' }`}>
+                        {getRoleText()}
                     </span>
                 </span>
-                <p className='introPara'>I am a skilled Software Developer and passionate engineer in designing </p>
-                <Link><button className="btn"><img src={btnImg} alt="Hire" className="btnImg" />Hire me</button></Link>
+                <p className='introPara'>I am a skilled Software Developer, UI/UX Designer, and passionate ML Explorer</p>
+                <a href="https://drive.google.com/file/d/1cvdJYBB07smJ_pI8CjjeelQNgJE-S33d/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                    <button className="btn">
+                        <img src={btnImg} alt="Hire" className="btnImg" /> Resume
+                    </button>
+                </a>
             </div>
             <img src={bg} alt="Profile" className="bg" />
         </section>
