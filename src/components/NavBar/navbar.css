@@ -1,17 +1,17 @@
 /* navbar.css */
-
 .navbar {
     background-color: black;
     color: #fff;
     padding: 1rem;
     display: flex;
-    align-items: center;
+    align-items: center; /* Center vertically */
     justify-content: space-between;
     position: sticky;
     top: 0;
     z-index: 3;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 191, 255, 0.4), 0 0 15px 5px rgba(0, 191, 255, 0.2);
+    margin: auto; /* Center horizontally */
 }
 
 .logo {
@@ -60,12 +60,100 @@
     height: 1rem;
 }
 
+/* Media Query for Mobile */
 @media screen and (max-width: 768px) {
     .navbar {
         padding: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .desktopMenu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust as needed based on your design */
+        left: 0;
+        background-color: black;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 4px 8px rgba(0, 191, 255, 0.4), 0 0 15px 5px rgba(0, 191, 255, 0.2);
+    }
+
+    .desktopMenu.active {
+        display: flex;
     }
 
     .desktopMenuList {
-        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .desktopMenuListItem {
+        margin: 0.5rem 0;
+    }
+
+    .desktopMenuBtn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .desktopMenuImg {
+        margin-right: 0;
+    }
+}
+.mobileMenuToggle {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* ... (previous styles) ... */
+  
+    .mobileMenuToggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  
+    .bar {
+      width: 30px;
+      height: 5px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+  
+    .desktopMenu.active {
+      display: flex;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem;
+        max-width: 100%; /* Set a maximum width to prevent stretching on small screens */
+    }
+
+    .desktopMenuBtn {
+        padding: 8px 10px; /* Adjust padding to fit content */
+        width: auto; /* Allow button to shrink to content size */
+        text-align: center;
+    }
+
+    .desktopMenuImg {
+        margin-right: 5px; /* Adjust margin for image */
     }
 }

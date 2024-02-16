@@ -23,10 +23,10 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+    
     const emailTemplateParams = {
       your_name: formData.your_name,
-      your_email: formData.your_email,
+      your_email: formData.your_email, // Use the user's email from the form
       message: formData.message,
     };
   
