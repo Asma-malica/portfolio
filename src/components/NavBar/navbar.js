@@ -11,21 +11,33 @@ const Navbar = () => {
         <nav className="navbar">
             <img src={logo} alt="Logo" className="logo" />
             <div className="desktopMenu">
-                <Link to="/" className="desktopMenuListItem">
-                    Home
-                </Link>
-                <Link to="/about" className="desktopMenuListItem">
-                    About
-                </Link>
-                <Link to="/education" className="desktopMenuListItem">
-                    Education
-                </Link>
-                <Link to="/project" className="desktopMenuListItem">
-                    Projects
-                </Link>
-                <Link to="/skills" className="desktopMenuListItem">
-                    Skills
-                </Link>
+                <ul className="desktopMenuList">
+                    <li className="desktopMenuListItem">
+                        <Link to="/" className="Link">
+                            Home
+                        </Link>
+                    </li>
+                    <li className="desktopMenuListItem">
+                        <Link to="/about" className="Link">
+                            About
+                        </Link>
+                    </li>
+                    <li className="desktopMenuListItem">
+                        <Link to="/education" className="Link">
+                            Education
+                        </Link>
+                    </li>
+                    <li className="desktopMenuListItem">
+                        <Link to="/project" className="Link">
+                            Projects
+                        </Link>
+                    </li>
+                    <li className="desktopMenuListItem">
+                        <Link to="/skills" className="Link">
+                            Skills
+                        </Link>
+                    </li>
+                </ul>
             </div>
             <Link to="/contact" className="desktopMenuBtn">
                 <img src={contactImg} alt="" className="desktopMenuImg" />
@@ -36,4 +48,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

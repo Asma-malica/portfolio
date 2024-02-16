@@ -18,13 +18,13 @@ const Intro = () => {
     const getRoleText = () => {
         switch (showRoles) {
             case 0:
-                return 'Software Developer';
+                return 'Web Developer';
             case 1:
                 return 'UI/UX Designer';
             case 2:
                 return 'ML Explorer';
             default:
-                return 'Software Developer';
+                return 'Web Developer';
         }
     };
 
@@ -34,7 +34,7 @@ const Intro = () => {
                 <span className='hello'>Hello,</span>
                 <span className='introText'>
                     I'm <span className="introName">Asma Malica</span><br />
-                    <span className={`marquee ${showRoles === 0 ? 'softwareDeveloper' : showRoles === 1 ? 'uxDesigner' : 'mlExplorer' }`}>
+                    <span className={`marquee ${showRoles === 0 ? 'webDeveloper' : showRoles === 1 ? 'uxDesigner' : 'mlExplorer' }`}>
                         {getRoleText()}
                     </span>
                 </span>

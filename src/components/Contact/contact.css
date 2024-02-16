@@ -32,7 +32,7 @@
   width: 100%;
   margin-bottom: 15px;
   padding: 10px;
-  color: #fff; /* Text color */
+   color: #fff; 
   background-color: #000; /* Black background color for textboxes and textarea */
   border: 2px solid #3498db; /* Blue border for textboxes and textarea */
   border-radius: 5px; /* Rounded corners for input boxes and textarea */

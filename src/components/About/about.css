@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -11,23 +12,44 @@ body {
     align-items: center;
     padding: 2rem;
     box-sizing: border-box;
-    border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
-}
-
-.image-container img {
-    max-width: 100%;
-    border-radius: 50%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow for better visibility */
 }
 
 .content-container {
     max-width: 600px;
     text-align: center;
     margin-top: 1em;
-    border-radius: 10px; /* Add rounded corners for the content */
-    padding: 20px; /* Add padding for a cleaner look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.image-container {
+    width: 10%; /* Adjust the width to reduce the oval size */
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(28, 146, 210, 0.4); /* Darker shadow for better visibility */
+    border: 2px solid #00bfff;
+    text-align: center;
+    position: relative;
+    margin-top: 10em;
+    background: black;
+}
+
+
+
+.image-container img {
+    width: 100%; /* Adjust the width to ensure the image fits within the oval */
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 50%; */
+    margin-right: 100px;
+    position: absolute;
+    z-index: 1;
+}
+
+
 
 h1 {
     color: #00bfff;
@@ -40,7 +62,6 @@ p {
     margin-bottom: 1em;
 }
 
-/* Responsive Styles */
 @media screen and (min-width: 768px) {
     .about-container {
         flex-direction: row;
