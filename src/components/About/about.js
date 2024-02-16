@@ -11,7 +11,7 @@ const About = () => {
             <div className="content-container">
                 <h1>ABOUT ME</h1>
                 <h1>Asma Malica J</h1>
-                <p>Software Developer | UI/UX Designer | ML Explorer</p>
+                <p>Web Developer | UI/UX Designer | ML Explorer</p>
                 <p>
                     I am a tech enthusiast and UI/UX Designer, merging creativity with web development for seamless user experiences. My exploration into Machine Learning enhances my ability to personalize designs, predict user behavior, and employ innovative solutions. Passionate about staying at the forefront of design trends, I integrate ML to create visually appealing and intuitive interfaces.
                 </p>

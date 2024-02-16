@@ -10,7 +10,7 @@ const Intro = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setShowRoles((prev) => (prev + 1) % 3); // Toggle between 0, 1, and 2
-        }, 10000); // Toggle every 10 seconds
+        }, 1000); // Toggle every 10 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -38,7 +38,7 @@ const Intro = () => {
                         {getRoleText()}
                     </span>
                 </span>
-                <p className='introPara'>I am a skilled Software Developer, UI/UX Designer, and passionate ML Explorer</p>
+                <p className='introPara'>I am a skilled Web Developer, UI/UX Designer, and passionate ML Explorer</p>
                 <a href="https://drive.google.com/file/d/1cvdJYBB07smJ_pI8CjjeelQNgJE-S33d/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                     <button className="btn">
                         <img src={btnImg} alt="Hire" className="btnImg" /> Resume
