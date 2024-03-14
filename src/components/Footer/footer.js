@@ -20,13 +20,13 @@ const Footer = () => {
                 </div>
                 <div className="right-content">
                     {/* <p className="additional-info">Explore more</P>  */}
-                    <a href="https://www.linkedin.com/in/asma-malica/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/Asma-malica/" target="_blank" rel="noopener noreferrer">
                         <img src={LinkedInIcon} alt="LinkedIn" className="social-icon" />
                     </a>
-                    <a href="https://github.com/YourGitHubUsername" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/Asma-malica" target="_blank" rel="noopener noreferrer">
                         <img src={GitHubIcon} alt="GitHub" className="social-icon" />
                     </a>
-                    {/* Add more social icons as needed */}
+                    
                 </div>
             </div>
         </footer>
