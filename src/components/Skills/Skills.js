@@ -9,7 +9,6 @@ const Skills = () => {
         <h2 className="category-title">Programming Languages</h2>
         <ul className="skills-list">
           <li>C</li>
-          <li>C++</li>
           <li>Python</li>
           <li>Java</li>
         </ul>
@@ -27,7 +26,7 @@ const Skills = () => {
       <div className="skill-category">
         <h2 className="category-title">Web Development</h2>
         <ul className="skills-list">
-          <li>HTML5</li>
+          <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript</li>
           <li>React JS</li>
@@ -46,7 +45,7 @@ const Skills = () => {
       <div className="skill-category">
         <h2 className="category-title">Tools and Databases</h2>
         <ul className="skills-list">
-          <li>Git & GitHub</li>
+          <li>GitHub</li>
           <li>MongoDB</li>
           <li>MySQL</li>
         </ul>

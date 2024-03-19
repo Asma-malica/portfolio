@@ -19,7 +19,7 @@ const Footer = () => {
                     </p>
                 </div>
                 <div className="right-content">
-                    {/* <p className="additional-info">Explore more</P>  */}
+                   
                     <a href="https://www.linkedin.com/in/Asma-malica/" target="_blank" rel="noopener noreferrer">
                         <img src={LinkedInIcon} alt="LinkedIn" className="social-icon" />
                     </a>
