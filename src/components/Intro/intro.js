@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './intro.css';
 import bg from '../../assets/asma.png';
 import btnImg from '../../assets/hireme.png';
+import Particle from "./particle";
 
 const Intro = () => {
     const [showRoles, setShowRoles] = useState(0); // 0 for Software Developer, 1 for UI/UX Designer, 2 for ML Explorer
@@ -29,6 +30,7 @@ const Intro = () => {
     };
 
     return (
+        // <Particle>
         <section id="intro">
             <div className="introContent">
                 <span className='hello'>Hello,</span>
@@ -47,6 +49,7 @@ const Intro = () => {
             </div>
             <img src={bg} alt="Profile" className="bg" />
         </section>
+        // </Particle>
     );
 }
 
