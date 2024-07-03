@@ -41,7 +41,7 @@ const Intro = () => {
                     </span>
                 </span>
                 <p className='introPara'>I am a skilled Web Developer, UI/UX Designer, and passionate ML Explorer</p>
-                <a href="https://drive.google.com/file/d/1k6PssIQZEl4NbBbbfRfOJcfvxRUDGFu0/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <a href="https://drive.google.com/file/d/1oExEU9x5_o8oPwJq6L1MfpXX5JdL3JPL/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                     <button className="btn">
                         <img src={btnImg} alt="Hire" className="btnImg" /> Resume
                     </button>
