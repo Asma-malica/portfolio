@@ -35,6 +35,12 @@ const projects = [
     description: 'This is a simple web-based number guessing game where users attempt to guess a randomly generated number.',
     githubLink: 'https://github.com/Asma-malica/GuessTheNumber',
   },
+  
+  {
+    title: 'Memory Game',
+    description: 'This is a simple web-based memory matching game where users attempt to match pairs of cards featuring various icons.',
+    githubLink: 'https://github.com/Asma-malica/Game/tree/master/Memory_Game',
+  },
 
  
   {
