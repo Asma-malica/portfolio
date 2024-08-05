@@ -25,7 +25,7 @@ const Education = () => {
         <div className="education-year">2020-2024</div>
         <div className="education-details">
           <h3>Software Engineering</h3>
-          <p>Pursuing a Bachelor's in Computer Science Engineering from Kongu Engineering College, Perundurai, currently maintaining a stellar CGPA of 8.9.</p>
+          <p>Pursuing a Bachelor's in Computer Science Engineering from Kongu Engineering College, Perundurai, currently maintaining a stellar CGPA of 8.8.</p>
         </div>
       </div>
     </div>
