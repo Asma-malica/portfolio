@@ -1,10 +1,9 @@
-/* navbar.css */
 .navbar {
     background-color: black;
     color: #fff;
     padding: 1rem;
     display: flex;
-    align-items: center; /* Center vertically */
+    align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
@@ -23,6 +22,8 @@
 .desktopMenu {
     display: flex;
     align-items: center;
+    justify-content: flex-end; /* Align menu to the right */
+    flex: 1; /* Allow it to take available space */
 }
 
 .desktopMenuList {
@@ -42,22 +43,28 @@
     border-bottom: 3px solid #00bfff;
 }
 
-.desktopMenuBtn {
-    background: white;
+.Link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.Link:hover {
+    color: #00bfff;
+}
+
+.contactLink {
     padding: 8px 15px;
-    cursor: pointer;
-    border: none;
-    border-radius: 2rem;
+    /* background: white; */
+    color: white;
+    /* border-radius: 2rem; */
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.desktopMenuBtn:hover {
-    background-color: #f0f0f0;
-}
-
-.desktopMenuImg {
-    object-fit: cover;
-    margin-right: 10px;
-    height: 1rem;
+.contactLink:hover {
+    /* background-color: #f0f0f0; */
 }
 
 /* Media Query for Mobile */
@@ -73,7 +80,7 @@
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 60px; /* Adjust as needed based on your design */
+        top: 60px; 
         left: 0;
         background-color: black;
         border-radius: 0 0 15px 15px;
@@ -94,66 +101,36 @@
     .desktopMenuListItem {
         margin: 0.5rem 0;
     }
-
-    .desktopMenuBtn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .desktopMenuImg {
-        margin-right: 0;
-    }
 }
+
 .mobileMenuToggle {
     display: none;
     cursor: pointer;
-  }
-  
-  .bar {
+}
+
+.bar {
     width: 25px;
     height: 3px;
     background-color: white;
     margin: 6px 0;
     transition: 0.4s;
-  }
-  
-  @media screen and (max-width: 768px) {
-    /* ... (previous styles) ... */
-  
+}
+
+@media screen and (max-width: 768px) {
     .mobileMenuToggle {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      position: absolute;
-      right: 20px;
-      top: 20px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
-  
+
     .bar {
-      width: 30px;
-      height: 5px;
-      background-color: white;
-      margin: 6px 0;
-      transition: 0.4s;
-    }
-  
-    .desktopMenu.active {
-      display: flex;
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .navbar {
-        padding: 0.5rem;
-        max-width: 100%; /* Set a maximum width to prevent stretching on small screens */
-    }
-
-    .desktopMenuBtn {
-        padding: 8px 10px; /* Adjust padding to fit content */
-        width: auto; /* Allow button to shrink to content size */
-        text-align: center;
-    }
-
-    .desktopMenuImg {
-        margin-right: 5px; /* Adjust margin for image */
+        width: 30px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0;
+        transition: 0.4s;
     }
 }

@@ -1,10 +1,6 @@
-// Navbar.js
-
 import React, { useState } from 'react';
 import './navbar.css';
 import logo from '../../assets/logo.png';
-import contactImg from '../../assets/contact.png';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,36 +20,41 @@ const Navbar = () => {
       <div className={`desktopMenu ${isMobileMenuOpen ? 'active' : ''}`}>
         <ul className="desktopMenuList">
           <li className="desktopMenuListItem">
-            <Link to="/" className="Link" onClick={toggleMobileMenu}>
+            <a href="/" className="Link" onClick={toggleMobileMenu}>
               Home
-            </Link>
+            </a>
           </li>
           <li className="desktopMenuListItem">
-            <Link to="/about" className="Link" onClick={toggleMobileMenu}>
+            <a href="/about" className="Link" onClick={toggleMobileMenu}>
               About
-            </Link>
+            </a>
           </li>
           <li className="desktopMenuListItem">
-            <Link to="/education" className="Link" onClick={toggleMobileMenu}>
+            <a href="/education" className="Link" onClick={toggleMobileMenu}>
               Education
-            </Link>
+            </a>
           </li>
           <li className="desktopMenuListItem">
-            <Link to="/project" className="Link" onClick={toggleMobileMenu}>
+            <a href="/project" className="Link" onClick={toggleMobileMenu}>
               Projects
-            </Link>
+            </a>
           </li>
           <li className="desktopMenuListItem">
-            <Link to="/skills" className="Link" onClick={toggleMobileMenu}>
+            <a href="/skills" className="Link" onClick={toggleMobileMenu}>
               Skills
-            </Link>
+            </a>
+          </li>
+          <li className="desktopMenuListItem">
+            <a
+              href="mailto:asmamalica07@gmail.com"
+              className="Link contactLink"
+              onClick={toggleMobileMenu}
+            >
+              Contact Me
+            </a>
           </li>
         </ul>
       </div>
-      <Link to="/contact" className="desktopMenuBtn" onClick={toggleMobileMenu}>
-        <img src={contactImg} alt="" className="desktopMenuImg" />
-        Contact Me
-      </Link>
     </nav>
   );
 };
