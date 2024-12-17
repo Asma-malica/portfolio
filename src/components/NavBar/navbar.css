@@ -10,7 +10,7 @@
     z-index: 3;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 191, 255, 0.4), 0 0 15px 5px rgba(0, 191, 255, 0.2);
-    margin: auto; /* Center horizontally */
+    margin: auto; 
 }
 
 .logo {
@@ -22,8 +22,8 @@
 .desktopMenu {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align menu to the right */
-    flex: 1; /* Allow it to take available space */
+    justify-content: flex-end; 
+    flex: 1; 
 }
 
 .desktopMenuList {
@@ -40,7 +40,7 @@
 
 .desktopMenuListItem:hover {
     color: #00bfff;
-    border-bottom: 3px solid #00bfff;
+    border-bottom: 1px solid #00bfff;
 }
 
 .Link {
