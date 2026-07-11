@@ -2,7 +2,7 @@ import './index.css';
 // Example using createRoot in index.js
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App'; // Replace with your main component
 
 const root = document.getElementById('root');
