@@ -1,3 +1,4 @@
+import './index.css';
 // Example using createRoot in index.js
 
 import React from 'react';
