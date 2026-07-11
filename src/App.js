@@ -1,30 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/NavBar/navbar';
 import Intro from './components/Intro/intro';
 import About from './components/About/about';
-import Education from './components/Education/education';
-import Project from './components/Project/project';
-import Contact from './components/Contact/contact';
+import Experience from './components/Experience/Experience';
 import Skills from './components/Skills/Skills';
-import Navbar from './components/NavBar/navbar';
-import Footer from './components/Footer/footer'
+import Project from './components/Project/project';
+import Education from './components/Education/education';
+import Achievements from './components/Achievements/Achievements';
+import Contact from './components/Contact/contact';
+import Footer from './components/Footer/footer';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-        <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Intro />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer/>
-    </Router>
-      </div>
+    <div className="App bg-noise relative">
+      <Navbar />
+      <main className="pt-20"> {/* Add padding top to account for fixed navbar */}
+        <Intro />
+        <About />
+        <Experience />
+        <Skills />
+        <Project />
+        <Education />
+        <Achievements />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }
 
