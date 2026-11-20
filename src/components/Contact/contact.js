@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, CheckCircle2, AlertCircle, Mail, Copy, Check, Calendar, ExternalLink, MapPin } from "lucide-react";
-import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,7 +30,7 @@ const Contact = () => {
   };
 
   const generateMailtoLink = () => {
-    const subject = encodeURIComponent(formData.subject || `Inquiry from ${formData.your_name || 'Portfolio Visitor'}`);
+    const subject = encodeURIComponent(formData.subject || `Portfolio Inquiry from ${formData.your_name || 'Visitor'}`);
     const body = encodeURIComponent(
       `Hello Asma,\n\n${formData.message || ''}\n\nBest regards,\n${formData.your_name || ''}\nEmail: ${formData.your_email || ''}`
     );
@@ -44,39 +43,39 @@ const Contact = () => {
     setSubmitStatus(null);
     setErrorMessage('');
 
-    // Comprehensive parameter aliases so whatever field names the EmailJS template expects will match
-    const emailTemplateParams = {
-      name: formData.your_name,
-      user_name: formData.your_name,
-      from_name: formData.your_name,
-      your_name: formData.your_name,
-
-      email: formData.your_email,
-      user_email: formData.your_email,
-      from_email: formData.your_email,
-      your_email: formData.your_email,
-      reply_to: formData.your_email,
-
-      subject: formData.subject || 'Portfolio Contact Message',
-      message: formData.message,
-      to_name: 'Asma Malica',
-    };
-
     try {
-      // Use @emailjs/browser with configured keys
-      const serviceId = 'service_583ii9c';
-      const templateId = 'template_s8c8eoj';
-      const publicKey = '7u7x6KmkbzUYjv6nf';
+      // Send directly to asmamalica07@gmail.com using FormSubmit AJAX API (no API keys required)
+      const response = await fetch(`https://formsubmit.co/ajax/${myEmail}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.your_name,
+          email: formData.your_email,
+          _subject: formData.subject || `New Portfolio Message from ${formData.your_name}`,
+          message: formData.message,
+          _captcha: "false",
+          _template: "table",
+        }),
+      });
 
-      await emailjs.send(serviceId, templateId, emailTemplateParams, publicKey);
-      setSubmitStatus('success');
-      setFormData({ your_name: '', your_email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitStatus(null), 6000);
+      const result = await response.json();
+
+      if (response.ok && (result.success === "true" || result.success === true)) {
+        setSubmitStatus('success');
+        setFormData({ your_name: '', your_email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitStatus(null), 8000);
+      } else {
+        throw new Error(result.message || 'Failed to submit the form.');
+      }
     } catch (error) {
-      console.error('Email sending error:', error);
+      console.error('Submission error:', error);
+      // Fallback: If network or browser blocks AJAX, automatically offer or trigger mailto
       setSubmitStatus('error');
       setErrorMessage(
-        error?.text || error?.message || 'Email delivery service is currently unavailable. Please use the direct mail or Topmate option below.'
+        error.message || 'Unable to connect to email gateway. Click below to send directly via your mail application.'
       );
     } finally {
       setIsSubmitting(false);
@@ -85,7 +84,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background cyan glows */}
+      {/* Background cyan ambient glows */}
       <div className="absolute -bottom-1/3 -right-1/4 w-[600px] h-[600px] bg-[#00a6f4]/15 rounded-full blur-[140px] pointer-events-none"></div>
       <div className="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-[#0284c7]/15 rounded-full blur-[140px] pointer-events-none"></div>
 
@@ -237,12 +236,12 @@ const Contact = () => {
 
           </div>
 
-          {/* Right Column: Contact Form with Direct Fallback Container */}
+          {/* Right Column: Contact Form with Direct Delivery */}
           <div className="lg:col-span-7 glass-card p-6 sm:p-8 md:p-10 relative overflow-hidden">
             <div className="mb-6">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Send a Direct Message</h3>
               <p className="text-xs sm:text-sm text-slate-400">
-                Messages are routed directly to <span className="text-cyan-300 font-medium">{myEmail}</span>.
+                Messages are delivered directly to <span className="text-cyan-300 font-medium">{myEmail}</span>.
               </p>
             </div>
 
@@ -326,7 +325,7 @@ const Contact = () => {
                         transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
                         className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
                       />
-                      Delivering Message...
+                      Delivering to {myEmail}...
                     </span>
                   ) : submitStatus === 'success' ? (
                     <span className="flex items-center gap-2 text-sm text-white font-bold">
@@ -353,19 +352,24 @@ const Contact = () => {
 
               {/* Status Notifications */}
               {submitStatus === 'success' && (
-                <div className="p-4 rounded-xl bg-emerald-950/50 border border-emerald-500/40 text-emerald-300 text-xs flex items-center gap-2">
-                  <CheckCircle2 size={16} className="shrink-0 text-emerald-400" />
-                  <span>Thank you! Your message has been dispatched to Asma Malica. I will respond promptly.</span>
+                <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/50 text-emerald-300 text-xs space-y-1.5 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                  <div className="flex items-center gap-2 font-bold text-emerald-200">
+                    <CheckCircle2 size={18} className="shrink-0 text-emerald-400" />
+                    <span>Message Dispatched Successfully!</span>
+                  </div>
+                  <p className="text-[11px] text-emerald-300/90 leading-relaxed">
+                    Your message has been routed to <strong>{myEmail}</strong>. (Note: If this is the very first time submitting through the portal, FormSubmit will send a quick 1-time activation confirmation email to {myEmail}).
+                  </p>
                 </div>
               )}
 
               {submitStatus === 'error' && (
-                <div className="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 text-rose-300 text-xs space-y-2">
+                <div className="p-4 rounded-xl bg-rose-950/50 border border-rose-500/50 text-rose-300 text-xs space-y-2">
                   <div className="flex items-center gap-2">
                     <AlertCircle size={16} className="shrink-0 text-rose-400" />
-                    <span>Email service alert: {errorMessage}</span>
+                    <span>Notice: {errorMessage}</span>
                   </div>
-                  <div className="pt-2">
+                  <div className="pt-1">
                     <a
                       href={generateMailtoLink()}
                       className="inline-flex items-center gap-1.5 font-bold text-white underline hover:text-cyan-300"
