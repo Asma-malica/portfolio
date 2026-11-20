@@ -1,16 +1,18 @@
 * {
-    margin : 0 ;
-    padding : 0 ;
-    box-sizing : border-box ;
-    text-decoration : none ;
-    background : transparent ;
-    font-family: "Poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Inter", sans-serif;
 }
 
 body {
-    background : rgb(30, 30, 30);
-    color : white ;
-    overflow : hidden ;
-    overflow-y : scroll ;
+    background-color: #030814;
+    color: #f8fafc;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
+::selection {
+    background: rgba(0, 166, 244, 0.35);
+    color: #ffffff;
+}
